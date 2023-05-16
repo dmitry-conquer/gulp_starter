@@ -1,0 +1,4 @@
+/dist/js/app.min.js
+# /src/js/modules/
+/node_modules/
+/gulp/
