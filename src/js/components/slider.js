@@ -62,15 +62,15 @@ export function initSliders() {
                slidesPerView: 1,
                spaceBetween: 0,
             },
-            575.98: {
+            576: {
                slidesPerView: 1,
                spaceBetween: 0,
             },
-            767.98: {
+            768: {
                slidesPerView: 2,
                spaceBetween: 20,
             },
-            991.98: {
+            992: {
                slidesPerView: 3,
                spaceBetween: 20,
             },

@@ -1,4 +1,4 @@
-/* Imported plugins styles  */
+/* Import lib styles  */
 // @import '../../node_modules/swiper/swiper.scss';
 // @import '../../node_modules/swiper/modules/navigation/navigation.scss';
 // @import '../../node_modules/swiper/modules/autoplay/autoplay.scss';
@@ -22,6 +22,7 @@
 
 /* components-style */
 @import
+  "./components/buttons",
   "./components/header",
   "./components/modal",
   "./components/footer";

@@ -1,122 +1,131 @@
-import { isMobile } from './functions.js';
+import { isMobile } from "../modules/functions.js";
 
 export function initHeader() {
-   const header = document.querySelector('.header');
-   if (header) {
-      const headerIcon = document.querySelector('._menu-icon');
-      const headerMenu = document.querySelector('._menu-header');
-      const headerContainer = document.querySelector('.header__container');
-      const burgerAppearenceWidth = 991.98;
+  const header = document.querySelector(".header");
+  if (header) {
+    const headerIcon = document.querySelector("._menu-icon");
+    const headerMenu = document.querySelector("._menu-header");
+    const triggerSubmenu = document.querySelector("._open-sublist");
+    const burgerAppearenceWidth = 992;
 
+
+
+    // disable focus on menu items
+    if (window.innerWidth < burgerAppearenceWidth) {
+      headerMenu.querySelectorAll("a, button, input, textarea, select").forEach(link => {
+        link.setAttribute("tabIndex", -1);
+      });
+    }
+
+
+
+    // click deligation
+    document.addEventListener("click", e => {
+      // open / close menu
       if (window.innerWidth < burgerAppearenceWidth) {
-         headerMenu.querySelectorAll('a, button, input, textarea, select').forEach((link) => {
-            link.setAttribute('tabIndex', -1);
-         });
+        if (e.target.classList.contains("_menu-icon") || e.target.closest("._menu-link")) {
+          toggleMenu();
+        }
       }
 
-      document.addEventListener('click', (e) => {
-         const targetElement = e.target;
-         // - - - - - - - [ICON ACTIONS] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-         if (window.innerWidth < burgerAppearenceWidth) {
-            if (targetElement.classList.contains('_menu-icon') || targetElement.closest('._menu-link')) {
-               toggleMenu()
-            }
-         }
-         // - - - - - - - [SHOW / REMOVE SUB_LIST] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-         if (window.innerWidth >= 768 && isMobile.any()) {
-            if (targetElement.closest('._open-sublist')) {
-               triggerSubmenu.classList.toggle('_active-trigger-sublist');
-               targetElement.closest('._open-sublist').nextElementSibling.classList.toggle('_active-sublist');
-            }
-            if (!targetElement.closest('._open-sublist').nextElementSibling) {
-               triggerSubmenu.classList.remove('_active-trigger-sublist');
-               triggerSubmenu.nextElementSibling.classList.remove('_active-sublist');
-            }
-         } else if (window.innerWidth < 768 && isMobile.any()) {
-            if (targetElement.closest('._open-sublist')) {
-               triggerSubmenu.nextElementSibling.style.maxHeight = triggerSubmenu.nextElementSibling.style.maxHeight ?
-                  null :
-                  `${triggerSubmenu.nextElementSibling.scrollHeight}px`;
-               triggerSubmenu.classList.toggle('_active-trigger-sublist');
-            }
-         }
+      // show / hide sub-list
+      if (window.innerWidth >= 992 && isMobile.any()) {
+        if (e.target.closest("._open-sublist")) {
+          triggerSubmenu.classList.toggle("_active-trigger-sublist");
+        } else {
+          triggerSubmenu.classList.remove("_active-trigger-sublist");
+        }
+      } else if (window.innerWidth < 992 && isMobile.any()) {
+        console.log("< 992");
+        const dropDownMenu = triggerSubmenu.querySelector(".item-header__dd");
+        if (e.target.closest("._open-sublist")) {
+          dropDownMenu.style.maxHeight = dropDownMenu.style.maxHeight ? null : `${dropDownMenu.scrollHeight}px`;
+          triggerSubmenu.classList.toggle("_active-trigger-sublist");
+        }
+      }
+    });
+
+
+
+    // close menu on Escape
+    header.addEventListener("keydown", function (e) {
+      if (event.key === "Escape") {
+        if (headerMenu.classList.contains("_active-menu-header")) {
+          toggleMenu();
+        }
+      }
+    });
+
+
+
+    // add class to header on scroll
+    const headerOffset = 60;
+    function scrollHeader() {
+      let scrolled = window.scrollY;
+      if (scrolled > headerOffset && !header.classList.contains("_scroll")) {
+        header.classList.add("_scroll");
+      } else if (scrolled < headerOffset && header.classList.contains("_scroll")) {
+        header.classList.remove("_scroll");
+      }
+    }
+    scrollHeader();
+    document.addEventListener("scroll", () => {
+      scrollHeader();
+    });
+
+
+
+    // close / open menu
+    function toggleMenu() {
+      document.body.classList.toggle("_lock");
+      headerIcon.classList.toggle("_active-menu-icon");
+      headerMenu.classList.toggle("_active-menu-header");
+      tabLoopControl();
+      const menuItems = headerMenu.querySelectorAll("._anim-menu-item");
+      menuItems.forEach((item, i) => {
+        item.style.setProperty("--i", `${i}`);
+        item.classList.toggle("_animated-item");
       });
-
-      document.addEventListener('keydown', function(e) {
-         if (event.key === 'Escape') {
-            if (headerMenu.classList.contains('_active-menu-header')) {
-               toggleMenu();
-            }
-         }
-      });
+    }
 
 
-      // - - - - - - - [header scroll] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      const headerOffset = 60;
 
-      function scrollHeader() {
-         let scrolled = document.documentElement.scrollTop;
-         if (scrolled > headerOffset && !header.classList.contains('_scroll')) {
-            header.classList.add('_scroll');
-         } else if (scrolled < headerOffset && header.classList.contains('_scroll')) {
-            header.classList.remove('_scroll');
-         }
-      }
-      scrollHeader()
-      document.addEventListener('scroll', () => {
-         scrollHeader()
-      })
-      // - - - - - - - [add functions] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // header keybord controll
+    function tabLoopControl() {
+      const focusableElements = headerMenu.querySelectorAll("a, button, input, textarea, select");
+      const firstFocusableElement = focusableElements[0];
+      const lastFocusableElement = focusableElements[focusableElements.length - 1];
+      firstFocusableElement.focus();
 
-      function tabLoopControl() {
-         const focusableElements = headerMenu.querySelectorAll('a, button, input, textarea, select');
-         const firstFocusableElement = focusableElements[0];
-         const lastFocusableElement = focusableElements[focusableElements.length - 1];
-         firstFocusableElement.focus()
-
-         if (headerMenu.classList.contains('_active-menu-header')) {
-            headerContainer.addEventListener('keydown', handleTabKey);
-            focusableElements.forEach((link) => {
-               link.removeAttribute('tabIndex');
-            });
-         } else {
-            headerContainer.removeEventListener('keydown', handleTabKey);
-            focusableElements.forEach((link) => {
-               link.setAttribute('tabIndex', '-1');
-            });
-            headerIcon.focus();
-         }
-
-         function handleTabKey(e) {
-            const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-            if (!isTabPressed) return;
-
-            if (e.shiftKey) {
-               if (document.activeElement === firstFocusableElement) {
-                  e.preventDefault();
-                  lastFocusableElement.focus();
-               }
-            } else {
-               if (document.activeElement === lastFocusableElement) {
-                  e.preventDefault();
-                  firstFocusableElement.focus();
-               }
-            }
-         };
+      if (headerMenu.classList.contains("_active-menu-header")) {
+        headerMenu.addEventListener("keydown", handleTabKey);
+        focusableElements.forEach(link => {
+          link.removeAttribute("tabIndex");
+        });
+      } else {
+        headerMenu.removeEventListener("keydown", handleTabKey);
+        focusableElements.forEach(link => {
+          link.setAttribute("tabIndex", "-1");
+        });
+        headerIcon.focus();
       }
 
-      function toggleMenu() {
-         document.body.classList.toggle('_lock');
-         headerIcon.classList.toggle('_active-menu-icon');
-         headerMenu.classList.toggle('_active-menu-header');
+      function handleTabKey(e) {
+        const isTabPressed = e.key === "Tab" || e.keyCode === 9;
+        if (!isTabPressed) return;
 
-         tabLoopControl();
-
-         const menuItems = headerMenu.querySelectorAll('._menu-item');
-         menuItems.forEach((item, i) => {
-            item.style.setProperty('--i', `${i}`);
-            item.classList.toggle('_anim-menu-item');
-         });
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            e.preventDefault();
+            lastFocusableElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastFocusableElement) {
+            e.preventDefault();
+            firstFocusableElement.focus();
+          }
+        }
       }
-   }
+    }
+  }
 }
