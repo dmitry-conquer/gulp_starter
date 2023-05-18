@@ -31,7 +31,7 @@ export const spritesGen = () => {
           symbol: {
             sprite: "../sprite.svg",
             // Page with svg examples
-            example: true,
+            example: false,
           },
         },
         shape: {
