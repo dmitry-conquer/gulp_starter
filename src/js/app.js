@@ -3,15 +3,15 @@
 import { consoleInfo } from './modules/functions.js';
 // import gsap from "gsap";
 // import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
-// import { initHeader } from './modules/header.js';
+// import { initHeader } from './components/header.js';
 // import { initSpoiler, initDdropdown } from './modules/spoilers.js';
-// import { initSliders } from './modules/slider.js';
+// import { initSliders } from './components/slider.js';
 // import { initTabs } from './modules/tabs.js';
 // import { initModals, openModalIf } from './modules/modal.js';
 // import { useDynamicAdapt } from './modules/dynamicAdapt.js';
 // import { setRating } from './modules/rating.js';
 // import { inputMask } from './modules/inputMasks.js';
-// import { hasErrors } from './modules/forms.js'; // hasErrors, viewPass, filePreview
+// import { hasErrors } from './components/forms.js'; // hasErrors, viewPass, filePreview
 // import noUiSlider from 'nouislider';
 // import AOS from 'aos';
 // import Rellax from "rellax";
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', app);
 
 function app() {
    // - - - - - - - [app {START}] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   consoleInfo()
+   consoleInfo();
 
 
 
