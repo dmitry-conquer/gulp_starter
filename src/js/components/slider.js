@@ -79,9 +79,9 @@ export function initSliders() {
 
 
          // Events
+            /*
          on: {
             // - - - - - - - [custom fraction] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-            /*
             init: function (swiper) {
               const allSliders = document.querySelector('.slider__all');
               allSliders.innerHTML = swiper.slides.length;
@@ -92,11 +92,9 @@ export function initSliders() {
               currentSlide.innerHTML = swiper.realIndex + 1;
               console.log(currentSlide.innerHTML);
             },
-            */
 
 
             // - - - - - - - [tabs] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-            /*
             init: function(swiper) {
                const captions = document.querySelectorAll('.captions-courses__item');
                captions.forEach((item, index) => {
@@ -112,8 +110,8 @@ export function initSliders() {
                })
                captions[swiper.realIndex].classList.add('_active');
             },
-            */
          },
+            */
       });
 
       // stop slider on mouseenter

@@ -60,7 +60,7 @@
     "prettier": "^2.8.8",
     "sass": "^1.62.1",
     "stylelint": "^15.6.2",
-    "swiper": "^9.3.2",
+    "swiper": "^8.4.7",
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "^2.2.3",
     "webpack": "^5.83.1",

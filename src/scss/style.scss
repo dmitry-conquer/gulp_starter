@@ -22,12 +22,11 @@
 
 /* components-style */
 @import
-  "./components/buttons",
   "./components/header",
   "./components/modal",
   "./components/footer";
 
 /* Pages */
 @import
-  "index-page",
+  "home-page",
   "404-page";

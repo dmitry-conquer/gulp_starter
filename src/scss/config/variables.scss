@@ -4,8 +4,6 @@ $container-padding: 15; // Отступы у контейнера (по 15px с�
 // Ширина контейнера + padding (0 = нет ограничения)
 $container-max-width: calc($container-layout-width + ($container-padding * 2));
 $section-gap: 130px;
-$section-gap-hf: calc($section-gap / 2);
-$section-gap-min: 30px; // at 320px
 
 // header-height
 $xl-header: 90px;
@@ -14,10 +12,10 @@ $md-header: 50px;
 $sm-header: 45px;
 
 //break-points
-$xl: 1199px;
+$xl: 1200px;
 $lg: 992px;
-$md: 767px;
-$sm: 575px;
+$md: 768px;
+$sm: 576px;
 
 /* Brand colors */
 $primary-color-lightest: #000;
@@ -26,23 +24,12 @@ $primary-color: #000;
 $primary-color-dark: #000;
 $primary-color-darker: #000;
 
-$secondary-color-lightest: #000;
-$secondary-color-light: #000;
 $secondary-color: #000;
-$secondary-color-dark: #000;
-$secondary-color-darker: #000;
-
-$tertiary-color-lightest: #000;
-$tertiary-color-light: #000;
 $tertiary-color: #000;
-$tertiary-color-dark: #000;
-$tertiary-color-darker: #000;
+
 
 /* Additional colors */
 $color-active: #000;
-$color-button-hover: #000;
-$color-link-hover: #000;
-$color-link-active: #000;
 $color-muted: #000;
 $color-success: #000;
 $color-danger: #000;
@@ -57,9 +44,3 @@ $gray-100: #fff;
 $gray-200: #f7f9fd;
 $gray-300: #ededed;
 $gray-400: #c4c4c4;
-
-/* === Container max-widths === */
-// $xl-container: 960;
-// $lg-container: 720;
-// $md-container: 540;
-// $sm-container: 100%;
