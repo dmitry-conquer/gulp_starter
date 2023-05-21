@@ -1,13 +1,13 @@
 'use strict';
 // > - - - - - - - - [Import] - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - -
-// import { consoleInfo, isWebp() } from './modules/functions.js';
-// import { initSliders } from './components/slider.js';
-// import { initHeader } from './components/header.js';
-// import { hasErrors } from './components/forms.js'; // hasErrors, viewPass, filePreview
-// import { initSpoiler, initDdropdown } from './components/spoilers.js';
-// import { initTabs } from './components/tabs.js';
-// import { initModals, openModalIf } from './components/modal.js';
-// import { useDynamicAdapt } from './modules/dynamicAdapt.js';
+// import { consoleInfo, isWebp() } from './lib/functions.js';
+// import { initSliders } from './lib/slider.js';
+// import { initHeader } from './lib/header.js';
+// import { hasErrors } from './lib/forms.js'; // hasErrors, viewPass, filePreview
+// import { initSpoiler, initDdropdown } from './lib/spoilers.js';
+// import { initTabs } from './lib/tabs.js';
+// import { initModals, openModalIf } from './lib/modal.js';
+// import { useDynamicAdapt } from './lib/dynamicAdapt.js';
 
 // import gsap from "gsap";
 // import { ScrollTrigger } from 'gsap/ScrollTrigger.js';

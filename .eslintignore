@@ -1,4 +1,4 @@
 /dist/js/app.min.js
-# /src/js/modules/
+/src/js/lib/dynamicAdapt.js
 /node_modules/
 /gulp/
