@@ -1,7 +1,7 @@
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import autoPrefixer from "gulp-autoprefixer";
-import webpcss from "gulp-webpcss";
+// import webpcss from "gulp-webpcss";
 import groupCssMediaQueries from "gulp-group-css-media-queries";
 import GulpCleanCss from "gulp-clean-css";
 
@@ -18,15 +18,15 @@ export const style = () => {
       )
 
       // ! Automatically substitutes webp file (if need) + activate js function
-      .pipe(
-        app.plugins.if(
-          app.isBuild,
-          webpcss({
-            webpClass: '.webp',
-            noWebpClass: '.no-webp',
-          })
-        )
-      )
+      //.pipe(
+         //app.plugins.if(
+          // app.isBuild,
+          // webpcss({
+            // webpClass: '.webp',
+            // noWebpClass: '.no-webp',
+         //  })
+       //  )
+      // )
 
       .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
       .pipe(
@@ -34,7 +34,7 @@ export const style = () => {
           app.isBuild,
           autoPrefixer({
             grid: true,
-            overrideBrowserslist: ["last 3 versions"],
+            overrideBrowserslist: ["last 2 versions"],
             cascade: true,
           }),
         ),

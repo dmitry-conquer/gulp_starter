@@ -1,4 +1,4 @@
-import { isMobile } from "../modules/functions.js";
+import { isMobile } from "../lib/functions.js";
 
 export function initHeader() {
   const header = document.querySelector(".header");
