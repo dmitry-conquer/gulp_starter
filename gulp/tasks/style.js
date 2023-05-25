@@ -1,54 +1,34 @@
-import dartSass from "sass";
-import gulpSass from "gulp-sass";
-import autoPrefixer from "gulp-autoprefixer";
-// import webpcss from "gulp-webpcss";
-import groupCssMediaQueries from "gulp-group-css-media-queries";
-import GulpCleanCss from "gulp-clean-css";
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import combineMediaQueries from 'postcss-combine-media-query';
 
 const sass = gulpSass(dartSass);
 
 export const style = () => {
-  return (
-    app.gulp
+   const plugins = [
+      autoprefixer({ grid: true, overrideBrowserslist: 'last 2 versions' }),
+      cssnano(),
+      combineMediaQueries(),
+   ];
+
+   return app.gulp
       .src(app.path.src.scss, { sourcemaps: app.isDev })
       .pipe(
-        sass({
-          outputStyle: "expanded",
-        }),
+         sass({
+            outputStyle: 'expanded',
+         }),
       )
 
-      // ! Automatically substitutes webp file (if need) + activate js function
-      //.pipe(
-         //app.plugins.if(
-          // app.isBuild,
-          // webpcss({
-            // webpClass: '.webp',
-            // noWebpClass: '.no-webp',
-         //  })
-       //  )
-      // )
-
-      .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
+      .pipe(app.plugins.if(app.isBuild, postcss(plugins)))
       .pipe(
-        app.plugins.if(
-          app.isBuild,
-          autoPrefixer({
-            grid: true,
-            overrideBrowserslist: ["last 2 versions"],
-            cascade: true,
-          }),
-        ),
+         app.plugins.rename({
+            extname: '.min.css',
+         }),
       )
-
-      // if you need an uncompressed duplicate of the styles file
-      // .pipe(app.gulp.dest(app.path.build.css))
-      .pipe(app.plugins.if(app.isBuild, GulpCleanCss()))
-      .pipe(
-        app.plugins.rename({
-          extname: ".min.css",
-        }),
-      )
-      .pipe(app.gulp.dest(app.path.build.css))
-      .pipe(app.plugins.browserSync.stream())
-  );
+      .pipe(app.plugins.if(app.isBuild, app.plugins.size({ title: 'CSS', showFiles: true })))
+      .pipe(app.gulp.dest(app.path.build.css, { sourcemaps: app.isDev ? '.' : false }))
+      .pipe(app.plugins.browserSync.stream());
 };

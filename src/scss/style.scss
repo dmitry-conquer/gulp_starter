@@ -20,12 +20,6 @@
         "./common/fonts",
         "./common/global";
 
-/* components-style */
-/* prettier-ignore */
-@import "./components/header",
-        "./components/modal",
-        "./components/footer";
-
         
 // - - - - - - - [404] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 .error-page {
@@ -54,9 +48,11 @@
 
    &__text {
       @include av("font-size", 30, 20);
-
       margin-bottom: em(30, 30);
       text-align: center;
+      @media (max-width: ($md)) {
+         font-size: 20px;
+      }
    }
 
    &__button {

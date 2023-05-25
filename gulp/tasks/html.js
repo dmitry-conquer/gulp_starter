@@ -42,6 +42,7 @@ export const html = () => {
           })
         )
       )
+      .pipe(app.plugins.if(app.isBuild, app.plugins.size({ title: 'HTML', showFiles: true })))
       .pipe(app.gulp.dest(app.path.build.html))
       .pipe(app.plugins.browserSync.stream())
   );
