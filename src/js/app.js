@@ -2,6 +2,8 @@
 // import { hasErrors } from './modules/forms.js';
 // import { initSpoiler, initDdropdown } from './modules/spoilers.js';
 // import { initTabs } from './modules/tabs.js';
+// import { initSliders } from './modules/sliders.js';
+// import { initHeader } from './modules/header.js';
 // import { initModals, openModalIf } from './modules/modals.js';
 // import { useDynamicAdapt } from './modules/dynamicAdapt.js';
 // import gsap from "gsap";
@@ -13,9 +15,6 @@
 // import Choices from 'choices.js';
 // import { CountUp } from '../../node_modules/countup.js/dist/countUp.js';
 // import noUiSlider from 'nouislider';
-
-// import { initSliders } from './components/sliders.js';
-// import { initHeader } from './components/header.js';
 
 // > - - - - - - - - [app development] - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function app() {
