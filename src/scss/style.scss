@@ -20,7 +20,6 @@
         "./common/fonts",
         "./common/global";
 
-        
 // - - - - - - - [404] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 .error-page {
    &__container {
@@ -35,19 +34,19 @@
       min-height: 100vh;
    }
    &__title {
-      @include av("font-size", 150, 30);
+      @include av('font-size', 150, 30);
       margin-bottom: em(30, 150);
       font-weight: 700;
    }
 
    &__sub-title {
-      @include av("font-size", 45, 24);
+      @include av('font-size', 45, 24);
       margin-bottom: em(15, 45);
       font-weight: 500;
    }
 
    &__text {
-      @include av("font-size", 30, 20);
+      @include av('font-size', 30, 20);
       margin-bottom: em(30, 30);
       text-align: center;
       @media (max-width: ($md)) {

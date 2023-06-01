@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "eslint-config-prettier": "^8.8.0",
-    "eslint-config-prettier-airbnb": "^0.5.0"
+    "eslint-config-prettier-airbnb": "^0.5.0",
+    "micromodal": "^0.4.10"
   }
 }

@@ -15,6 +15,7 @@
 // import Choices from 'choices.js';
 // import { CountUp } from '../../node_modules/countup.js/dist/countUp.js';
 // import noUiSlider from 'nouislider';
+// import MicroModal from 'micromodal';
 
 // > - - - - - - - - [app development] - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function app() {
