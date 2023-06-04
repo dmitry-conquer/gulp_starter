@@ -20,7 +20,7 @@ export const js = () => {
         ],
       })
     )
-    .pipe(app.plugins.if(app.isBuild, app.plugins.size({ title: 'CSS', showFiles: true })))
+    .pipe(app.plugins.if(app.isBuild, app.plugins.size({ title: 'JS', showFiles: true })))
     .pipe(app.gulp.dest(app.path.build.js))
     .pipe(app.plugins.browserSync.stream());
 };
