@@ -7,16 +7,18 @@
 // @import '../../node_modules/nouislider/dist/nouislider.min';
 // @import '../../node_modules/aos/src/sass/aos.scss';
 // @import '../../node_modules/choices.js/src/styles/choices.scss';
+// "./common/tips";
+
 
 /* Config files */
 /* prettier-ignore */
 @import "./utils/functions",
-        "./urils/variables",
-        "./urils/normalize",
+        "./utils/variables",
+        "./utils/normalize",
         "./utils/mixins";
 
 /* Grobal styles */
 /* prettier-ignore */
 @import "./common/fonts",
-        "./common/global",
-        "./common/tips";
+        "./common/global";
+        
