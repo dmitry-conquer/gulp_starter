@@ -10,15 +10,12 @@
 // "./common/tips";
 
 
-/* Config files */
 /* prettier-ignore */
 @import "./utils/functions",
         "./utils/variables",
-        "./utils/normalize",
         "./utils/mixins";
-
-/* Grobal styles */
 /* prettier-ignore */
 @import "./common/fonts",
+        "./common/normalize",
         "./common/global";
-        
+
