@@ -16,7 +16,8 @@
         "./utils/mixins";
 /* prettier-ignore */
 @import "fonts",
-        "normalize";
+        "normalize",
+        "themes;
 
 html {
    scroll-behavior: smooth;
