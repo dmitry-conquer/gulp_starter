@@ -1,46 +1,18 @@
-$container-layout-width: 1200; // Ширина контейнера по макету
-$container-padding: 15; // Отступы у контейнера (по 15px слева и справа, 0 = нет отступа)
+$container-layout-width: 1200; // Real container template width
+$container-padding: 15; 
 
-// Ширина контейнера + padding (0 = нет ограничения)
-$container-max-width: calc($container-layout-width + ($container-padding * 2));
+$container-max-width: calc($container-layout-width + ($container-padding * 2)); // Project container template width
 $section-gap: 130px;
 
-// header-height
+/* header-height */
 $xl-header: 90px;
 $lg-header: 70px;
 $md-header: 50px;
 $sm-header: 45px;
 
-//break-points
+/* break-points */
 $xl: 1199.98px;
 $lg: 991.98px;
 $md: 767.98px;
 $sm: 575.98px;
 
-/* Brand colors */
-$primary-color-lightest: #000;
-$primary-color-light: #000;
-$primary-color: #000;
-$primary-color-dark: #000;
-$primary-color-darker: #000;
-
-$secondary-color: #000;
-$tertiary-color: #000;
-
-
-/* Additional colors */
-$color-active: #000;
-$color-muted: #000;
-$color-success: #000;
-$color-danger: #000;
-$color-warning: #000;
-$color-info: #000;
-$color-light: #000;
-
-$white: #fff;
-$black: #000;
-
-$gray-100: #fff;
-$gray-200: #f7f9fd;
-$gray-300: #ededed;
-$gray-400: #c4c4c4;
