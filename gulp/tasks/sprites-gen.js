@@ -23,7 +23,7 @@ export const spritesGen = () => {
             run: function ($) {
                $("[fill]").removeAttr("fill");
                $("[stroke]").removeAttr("stroke");
-               $("[style]").removeAttr("style");
+               // $("[style]").removeAttr("style");
             },
             parserOptions: {
                xmlMode: true,
@@ -51,5 +51,6 @@ export const spritesGen = () => {
             },
          }),
       )
-      .pipe(app.gulp.dest(app.path.src.sprites));
+      .pipe(app.gulp.dest(app.path.build.sprites));
 };
+

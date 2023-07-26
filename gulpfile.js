@@ -19,7 +19,6 @@ import { style } from './gulp/tasks/style.js';
 import { js } from './gulp/tasks/js.js';
 import { img } from './gulp/tasks/img.js';
 import { spritesGen } from './gulp/tasks/sprites-gen.js';
-import { spritesToDist } from './gulp/tasks/spritesToDist.js';
 import { fonts } from './gulp/tasks/fonts.js';
 // import { json } from "./gulp/tasks/json.js";
 import { zip } from './gulp/tasks/zip.js';
@@ -28,24 +27,25 @@ import { ftp } from './gulp/tasks/ftp.js';
 // file change watcher
 function watcher() {
    gulp.watch(path.watch.html, html);
+   gulp.watch(path.watch.html, style);
    gulp.watch(path.watch.scss, style);
    gulp.watch(path.watch.js, js);
    gulp.watch(path.watch.images, img);
-   gulp.watch(path.watch.sprites, spritesToDist);
+   gulp.watch(path.watch.svg, spritesGen);
    // gulp.watch(path.watch.json, json);
 }
 
 // main tasks
-const mainTasks = gulp.parallel(html, style, js, img, fonts, spritesToDist); // json
+const mainTasks = gulp.parallel(html, style, js, img, fonts, spritesGen); // json
 
 // individual tasks
 const spritesGeneration = spritesGen;
 
 // building scenarios for executing tasks
-const dev = gulp.series(reset, mainTasks, spritesToDist, gulp.parallel(watcher, server));
-const build = gulp.series(reset, mainTasks, spritesToDist);
-const deployZIP = gulp.series(reset, mainTasks, spritesToDist, zip);
-const deployFTP = gulp.series(reset, mainTasks, spritesToDist, ftp);
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+const deployZIP = gulp.series(reset, mainTasks, zip);
+const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 // scenarios
 export { spritesGeneration };
@@ -56,3 +56,4 @@ export { deployFTP };
 
 // default Script
 gulp.task('default', dev);
+
