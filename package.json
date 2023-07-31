@@ -46,7 +46,6 @@
     "gulp-util": "^3.0.8",
     "gulp-version-number": "^0.2.4",
     "gulp-webp": "^4.0.1",
-    "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
     "htmlhint": "^1.1.4",
     "postcss-combine-media-query": "^1.0.1",
@@ -58,7 +57,6 @@
     "stylelint-scss": "^5.0.0",
     "swiper": "=8.4.7",
     "vinyl-ftp": "^0.6.1",
-    "webp-converter": "=2.2.3",
     "webpack": "^5.83.1",
     "webpack-stream": "^7.0.0"
   },
