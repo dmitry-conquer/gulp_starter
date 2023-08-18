@@ -1,5 +1,5 @@
 import webpack from "webpack-stream";
-import ESLintPlugin from 'eslint-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin'; 
 
 export const js = () => {
   return app.gulp
@@ -10,13 +10,13 @@ export const js = () => {
         output: {
           filename: "app.min.js",
         },
+          optimization: {
+          minimizer: [
+            new TerserPlugin() // Додали TerserPlugin для мініфікації
+          ],
+        },
         plugins: [
-          new ESLintPlugin({
-            emitError: true,
-            emitWarning: true,
-            failOnError: true,
-            failOnWarning: false,
-          }),
+        
         ],
       })
     )
