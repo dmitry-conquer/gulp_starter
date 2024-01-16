@@ -4,10 +4,6 @@
 
    #{$property}: calc(#{$minSize + px} + #{$addSize} * (100vw - #{$widthTo + px}) / #{($widthFrom) - ($widthTo)});
 
-   @media (max-width: ($widthTo + px)) {
-      #{$property}: $minSize + px;
-   }
-
    @media (min-width: ($widthFrom + px)) {
       #{$property}: $startSize + px;
    }
