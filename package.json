@@ -11,10 +11,7 @@
     "ftp": "gulp deployFTP --build",
     "sprite-gen": "gulp spritesGeneration",
     "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix",
-    "lint:stylelint": "stylelint \"src/**/*.scss\" --config .stylelintrc",
-    "lint:stylelint:fix": "stylelint \"src/**/*.scss\" --config .stylelintrc --fix",
-    "htmlhint": "htmlhint ./dist/*.html"
+    "lint:fix": "eslint ./src --fix"
   },
   "author": "Conquer",
   "license": "ISC",

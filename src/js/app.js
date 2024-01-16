@@ -17,10 +17,7 @@
 // import noUiSlider from 'nouislider';
 // import MicroModal from 'micromodal';
 
-// > - - - - - - - - [app development] - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 function app() {
-   // - - - - - - - [app {START}] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   // - - - - - - - [app {END}] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 }
-
 document.addEventListener('DOMContentLoaded', app);
+

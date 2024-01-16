@@ -4,7 +4,7 @@
   "endOfLine": "lf",
   "bracketSameLine": true,
   "htmlWhitespaceSensitivity": "css",
-  "printWidth": 120,
+  "printWidth": 180,
   "quoteProps": "as-needed",
   "semi": true,
   "singleQuote": false,
@@ -12,6 +12,6 @@
   "trailingComma": "all",
   "jsxBracketSameLine": true,
   "jsxSingleQuote": false,
-  "singleAttributePerLine": true
+  "singleAttributePerLine": false
 }
 

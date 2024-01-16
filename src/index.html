@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="uk">
-   @@include('partials/head.html', { 'title': 'Головна' })
+   @@include('template-parts/head.html', { 'title': 'Головна' })
    <body>
       <div class="wrapper">
-         @@include('partials/header.html', { })
+         @@include('template-parts/header.html', { })
          <main>
-            <!-- *** h1? -> <h1 class="visually-hidden"></h1>  -->
             <section class="hero">
                <div class="hero__container">
-                  <!-- *** h2? -> <h2 class="visually-hidden"></h2>  -->
                </div>
             </section>
          </main>
-        @@include('partials/footer.html', { }) @@include('partials/modal.html', { }) 
+        @@include('template-parts/footer.html', { }) @@include('template-parts/modal.html', { }) 
       </div>
       <script type="module" crossorigin src="./js/app.min.js"></script>
    </body>

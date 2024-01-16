@@ -10,14 +10,11 @@
 // "./lib/tips";
 
 
-/* prettier-ignore */
 @import "./utils/functions",
         "./utils/variables",
         "./utils/mixins";
-/* prettier-ignore */
 @import "fonts",
-        "normalize",
-        "themes;
+        "normalize";
 
 html {
    scroll-behavior: smooth;
@@ -25,14 +22,9 @@ html {
 }
 
 body {
-   font-family: "Roboto", sans-serif;
-   font-weight: 400;
-   font-size: 16px;
-
-   &._lock {
-      overflow: hidden;
-      touch-action: none;
-   }
+   // font-family: "Roboto", sans-serif;
+   // font-weight: 400;
+   // font-size: 16px;
 }
 
 [class*="__container"] {
@@ -58,30 +50,9 @@ body {
    }
 }
 
-._imw {
-   img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-   }
-}
-
-._ibg {
-   position: relative;
-
-   img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-   }
-}
 
  /* Only screen readers + google */
-.visually-hidden {
+.sr-only {
    position: absolute;
    overflow: hidden;
    margin: -1px;
@@ -93,26 +64,6 @@ body {
    clip: rect(0, 0, 0, 0);
 }
 
-// - - - - - - - [sprites] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*
-.icon-example {
-  width: 40px;
-  height: 40px;
-  fill: none;
-  use {
-    --social-fill-path: white;
-    --social-stroke-circle: white;
-  }
-  @media (any-hover: hover) {
-    &:hover {
-      use {
-        --social-fill-path: skyblue;
-        --social-stroke-circle: skyblue;
-      }
-    }
-  }
-}
-*/
 
 // >> - - - - - - - - - - - - - [current project styles] - - - - - - - - - - - - - - - - -
 
